@@ -10,8 +10,8 @@ import numpy as np
 import cv2
 
 # multiple cascades: https://github.com/Itseez/opencv/tree/master/data/haarcascades
-faceCascade = cv2.CascadeClassifier('D:\Data\doanh\Doanh\FPT\Summer2024\CPV301\\assignment\OpenCV-Face-Recognition\FaceDetection\Cascades\haarcascade_frontalface_default.xml')
-eyeCascade = cv2.CascadeClassifier('D:\Data\doanh\Doanh\FPT\Summer2024\CPV301\\assignment\OpenCV-Face-Recognition\FaceDetection\Cascades\haarcascade_eye.xml')
+faceCascade = cv2.CascadeClassifier('FaceDetection\Cascades\haarcascade_frontalface_default.xml')
+eyeCascade = cv2.CascadeClassifier('FaceDetection\Cascades\haarcascade_eye.xml')
  
 cap = cv2.VideoCapture(0)
 cap.set(3,640) # set Width

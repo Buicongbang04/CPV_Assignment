@@ -16,7 +16,7 @@ cam = cv2.VideoCapture(0)
 cam.set(3, 640) # set video width
 cam.set(4, 480) # set video height
 
-face_detector = cv2.CascadeClassifier('D:\Data\doanh\Doanh\FPT\Summer2024\CPV301\\assignment\OpenCV-Face-Recognition\FaceDetection\Cascades\haarcascade_frontalface_default.xml')
+face_detector = cv2.CascadeClassifier('FacialRecognition\haarcascade_frontalface_default.xml')
 # For each person, enter one numeric face id
 face_id = input('\n enter user id end press <return> ==>  ')
 
@@ -45,7 +45,7 @@ while(True):
     if k == 27:
         break
     elif count >= 300: # Take 30 face sample and stop video
-         break
+        break
 
 # Do a bit of cleanup
 print("\n [INFO] Exiting Program and cleanup stuff")

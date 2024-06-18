@@ -16,10 +16,10 @@ from PIL import Image
 import os
 
 # Path for face image database
-path = 'D:\Data\doanh\Doanh\FPT\Summer2024\CPV301\\assignment\OpenCV-Face-Recognition\dataset'
+path = 'D:\Study\FPT_Uni\Summer-2024\CPV301\CPV_Assignment\dataset'
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
-detector = cv2.CascadeClassifier("D:\Data\doanh\Doanh\FPT\Summer2024\CPV301\\assignment\OpenCV-Face-Recognition\FaceDetection\Cascades\haarcascade_frontalface_default.xml");
+detector = cv2.CascadeClassifier("D:\Study\FPT_Uni\Summer-2024\CPV301\CPV_Assignment\FacialRecognition\haarcascade_frontalface_default.xml")
 
 # function to get the images and label data
 def getImagesAndLabels(path):
@@ -47,7 +47,7 @@ faces,ids = getImagesAndLabels(path)
 recognizer.train(faces, np.array(ids))
 
 # Save the model into trainer/trainer.yml
-recognizer.write('D:\Data\doanh\Doanh\FPT\Summer2024\CPV301\\assignment\OpenCV-Face-Recognition\\trainer\\trainer.yml') # recognizer.save() worked on Mac, but not on Pi
+recognizer.write('D:\\Study\\FPT_Uni\\Summer-2024\\CPV301\\CPV_Assignment\\trainer\\trainer.yml') # recognizer.save() worked on Mac, but not on Pi
 
 # Print the numer of faces trained and end program
 print("\n [INFO] {0} faces trained. Exiting Program".format(len(np.unique(ids))))

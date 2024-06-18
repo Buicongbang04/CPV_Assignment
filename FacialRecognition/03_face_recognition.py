@@ -13,9 +13,9 @@ import numpy as np
 import os 
 
 recognizer = cv2.face.LBPHFaceRecognizer_create()
-recognizer.read('D:\Data\doanh\Doanh\FPT\Summer2024\CPV301\\assignment\OpenCV-Face-Recognition\\trainer\\trainer.yml')
-cascadePath = "D:\Data\doanh\Doanh\FPT\Summer2024\CPV301\\assignment\OpenCV-Face-Recognition\FacialRecognition\haarcascade_frontalface_default.xml"
-faceCascade = cv2.CascadeClassifier(cascadePath);
+recognizer.read('D:\\Study\\FPT_Uni\\Summer-2024\\CPV301\\CPV_Assignment\\trainer\\trainer.yml')
+cascadePath = "D:\\Study\\FPT_Uni\\Summer-2024\\CPV301\\CPV_Assignment\\FacialRecognition\\haarcascade_frontalface_default.xml"
+faceCascade = cv2.CascadeClassifier(cascadePath)
 
 font = cv2.FONT_HERSHEY_SIMPLEX
 
@@ -23,7 +23,7 @@ font = cv2.FONT_HERSHEY_SIMPLEX
 id = 0
 
 # names related to ids: example ==> Marcelo: id=1,  etc
-names = ['None', 'Doanh', 'nghia', 'Duong'] 
+names = ['None', 'Doanh', 'Nghia', 'Duong']
 
 # Initialize and start realtime video capture
 cam = cv2.VideoCapture(0)
@@ -57,25 +57,7 @@ while True:
         confidence = 100 - confidence
         # Check if confidence is less them 100 ==> "0" is perfect match 
         # c > 40 and w > 150
-        if confidence > 40 and w < 150:
-            id = names[id]
-            confidence = "  {0}%".format(round(confidence))
-        elif confidence > 44.5 and w < 180:
-            id = names[id]
-            confidence = "  {0}%".format(round(confidence))
-        elif confidence > 50.6 and w < 210:
-            id = names[id]
-            confidence = "  {0}%".format(round(confidence))
-        elif confidence >= 60 and w < 240:
-            id = names[id]
-            confidence = "  {0}%".format(round(confidence))
-        elif confidence >= 61 and w < 255:
-            id = names[id]
-            confidence = "  {0}%".format(round(confidence))
-        elif confidence >= 67 and w < 290:
-            id = names[id]
-            confidence = "  {0}%".format(round(confidence))
-        elif confidence >= 70 and w >= 290:
+        if confidence >= 50:
             id = names[id]
             confidence = "  {0}%".format(round(confidence))
         else:

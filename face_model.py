@@ -53,6 +53,8 @@ while True:
         img = extract_features(image)
         pred = model.predict(img)
         pred_label = labels[np.argmax(pred)]
+
+        # Text
         cv2.putText(frame, 'Emotion: %s' %(pred_label), (0, y-100), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0),2)
         cv2.putText(frame, 'Name: ' + str(id), (0, y-130), font, 1, (255, 0, 0), 2)
         cv2.putText(frame, 'Rate: ' + str(int(confidence)), (0, y-70), font, 1, (0, 0, 255), 2)
